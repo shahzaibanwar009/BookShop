@@ -29,4 +29,10 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="not_a_member_sign_up_now">Not a member?Sign up now</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="already_a_member_please_login">already a member? Please login</string>
+    <string name="signup">signup</string>
 </resources>
