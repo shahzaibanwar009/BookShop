@@ -4,21 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGreen"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/shop">
+    </ImageView>
+
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show Success toast"
+        android:text="@string/showMenu"
         android:id="@+id/success_btn"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorGreenLight"
+        android:background="@color/colorWhite"
+        android:layout_alignParentBottom="true"
         android:onClick="showSuccessToast">
     </Button>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/success_btn"
-        android:text="Show Error toast"
-        android:onClick="showErrorToast">
-    </Button>
-
 </RelativeLayout>
