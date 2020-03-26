@@ -1,21 +1,20 @@
 package com.example.bookshop;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -24,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar objProgressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
+    private TextView headerEmail;
+    NavigationView objectNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,29 @@ public class MainActivity extends AppCompatActivity {
         }
         // call oncreate initialization method
         firebaseAuthenticatoin();
+        navigationViewInitialization();
     }
+    public void navigationViewInitialization()
+    {
 
+        objectNavigationView = findViewById(R.id.navigationView);
+
+        //get current user
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        objectNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+               if(item.getItemId() == R.id.item_logout)
+                {
+                    Toast.makeText(MainActivity.this, "You are Logged out", Toast.LENGTH_LONG).show();
+                    signOut();
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
     public void firebaseAuthenticatoin(){
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -109,5 +131,10 @@ public class MainActivity extends AppCompatActivity {
         if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
+    }
+
+    //sign out method
+    public void signOut() {
+        auth.signOut();
     }
 }
