@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/item_auther"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/auther_listview_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorGreen"
+        android:hint="There will be a name"/>
+
+    <TextView
+        android:id="@+id/auther_listview_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/auther_listview_name"
+        android:fontFamily="sans-serif"
+        android:textAppearance="?android:textAppearance"
+        android:textColor="@color/input_login"
+        android:hint="There will be city"/>
+
+    <TextView
+        android:id="@+id/auther_listview_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/auther_listview_city"
+        android:fontFamily="sans-serif"
+        android:textAppearance="?android:textAppearance"
+        android:textColor="@color/input_login"
+        android:hint="There will be a gender"/>
+
+</RelativeLayout>

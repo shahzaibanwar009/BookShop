@@ -35,4 +35,9 @@
     <string name="login">Login</string>
     <string name="already_a_member_please_login">already a member? Please login</string>
     <string name="signup">signup</string>
+    <string name="auther_name">Auther Name</string>
+    <string name="auther_city">Auther City</string>
+    <string name="submit">Submit</string>
+    <string name="go_to_home">Go to Home</string>
+    <string name="auther_gender">Auther Gender</string>
 </resources>

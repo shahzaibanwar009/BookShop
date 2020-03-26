@@ -56,6 +56,16 @@ public class MainActivity extends AppCompatActivity {
                     signOut();
                     return true;
                 }
+               else if(item.getItemId() == R.id.item_auther)
+               {
+                   startActivity(new Intent(MainActivity.this, CreateAuther.class));
+                   return true;
+               }
+               else if(item.getItemId() == R.id.item_auther_list)
+               {
+                   startActivity(new Intent(MainActivity.this, AuthersActivity.class));
+                   return true;
+               }
                 return false;
             }
         });
