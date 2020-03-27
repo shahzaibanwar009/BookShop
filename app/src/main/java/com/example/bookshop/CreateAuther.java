@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class CreateAuther extends AppCompatActivity {
 
     private final String COLLECTION_NAME = "authers";
     private EditText documentIdET,nameET,cityET, genderET;
+    Button submitBtn;
 
     //Step 1 - Create Firebase Firestore object
     private FirebaseFirestore objectFirebaseFirestore;
@@ -33,6 +35,15 @@ public class CreateAuther extends AppCompatActivity {
 
         initializeFirebaseFirestoreObject();
         connectJavaViewsWithXMLViews();
+
+        submitBtn = findViewById(R.id.btn_add_auther);
+
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addAuther();
+            }
+        });
     }
 
     private void initializeFirebaseFirestoreObject()
@@ -41,7 +52,7 @@ public class CreateAuther extends AppCompatActivity {
         objectFirebaseFirestore= FirebaseFirestore.getInstance();
     }
 
-    public void addAuther(View view)
+    public void addAuther()
     {
         if(!cityET.getText().toString().isEmpty()
                 && !nameET.getText().toString().isEmpty()
@@ -50,20 +61,25 @@ public class CreateAuther extends AppCompatActivity {
         {
             //Step 3 -- Creating Map to store values
             Map<String,Object> objectMap=new HashMap<>();
+            String id = objectFirebaseFirestore.collection(COLLECTION_NAME).document().getId();
+
 
             objectMap.put("name",nameET.getText().toString());
             objectMap.put("city",cityET.getText().toString());
             objectMap.put("gender",genderET.getText().toString());
+            objectMap.put("id",id);
 
-            String id = objectFirebaseFirestore.collection(COLLECTION_NAME).document().getId();
+
+
+//            Toast.makeText(CreateAuther.this, "Id before addting vallue:"+ id, Toast.LENGTH_LONG).show();
 
             //Step 4- add objectMap to Firebase Firestore
             objectFirebaseFirestore.collection(COLLECTION_NAME)
-//                    .document(id)
-                    .add(objectMap)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    .document(id)
+                    .set(objectMap)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
-                        public void onSuccess(DocumentReference documentReference) {
+                        public void onSuccess(Void aVoid) {
                             Toast objectToast=Toast.makeText(CreateAuther.this,
                                     "Auther added successfully", Toast.LENGTH_SHORT);
 

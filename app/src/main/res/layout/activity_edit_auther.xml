@@ -2,11 +2,11 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_create_auther"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorGreen"
-    tools:context=".CreateAuther">
+    >
 
     <RelativeLayout
         android:id="@+id/inner_activity_main"
@@ -16,24 +16,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Auther"
-            android:id="@+id/top_header_auther_create"
+            android:text="Edit Auther"
             android:textSize="40sp"
             android:layout_marginTop="120dp"
             android:layout_centerHorizontal="true"
             android:textColor="#fff"
             />
-        <EditText
-            android:id="@+id/auther_id"
-            android:hint="@string/auther_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:visibility="gone"
-            android:padding="8dp"
-            android:background="#fff" />
         <EditText
             android:id="@+id/auther_name"
             android:hint="@string/auther_name"
@@ -78,6 +66,7 @@
             android:background="@color/colorWhite"
             android:layout_below="@+id/auther_gender"
             android:layout_marginTop="17dp"
+            android:onClick="addAuther"
             android:layout_alignLeft="@+id/auther_gender"
             android:layout_alignRight="@+id/auther_gender"
             android:layout_alignStart="@+id/auther_gender"
@@ -86,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/AutherGoToHome"
+            android:id="@+id/btn_signup"
             android:textColor="#fff"
             android:onClick="goToHome"
             android:text="@string/go_to_home"
