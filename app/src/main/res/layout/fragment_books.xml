@@ -7,8 +7,24 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/bookHeader"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/books" />
+        android:layout_height="wrap_content"
+        android:hint="Book List"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        android:paddingTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <ListView
+        android:id="@+id/bookList"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
 
 </FrameLayout>
