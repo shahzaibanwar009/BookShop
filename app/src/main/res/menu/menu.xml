@@ -10,6 +10,12 @@
         android:id="@+id/item_auther_list"
         android:icon="@drawable/ic_list"
         />
+
+    <item
+        android:title="Boooks"
+        android:id="@+id/item_books"
+        android:icon="@drawable/ic_library"
+        />
     <item
         android:title="LOGOUT"
         android:id="@+id/item_logout"

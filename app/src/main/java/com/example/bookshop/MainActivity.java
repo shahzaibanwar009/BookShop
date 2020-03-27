@@ -66,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
                    startActivity(new Intent(MainActivity.this, AuthersActivity.class));
                    return true;
                }
+               else if(item.getItemId() == R.id.item_books)
+               {
+                   startActivity(new Intent(MainActivity.this, BooksActivity.class));
+                   return true;
+               }
                 return false;
             }
         });

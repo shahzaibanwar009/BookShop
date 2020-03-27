@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:background="@color/colorGreen">
 
     <ImageView
         android:layout_width="90dp"
@@ -12,16 +12,4 @@
         android:layout_centerInParent="true"
         android:scaleType="centerCrop"
         />
-
-   <!-- <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/header_img"
-        android:layout_centerInParent="true"
-        android:id="@+id/header_email"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="-32dp"
-        android:text="shahzaib"></TextView>-->
 </RelativeLayout>

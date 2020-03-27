@@ -85,6 +85,10 @@ public class CreateAuther extends AppCompatActivity {
 
                             objectToast.setGravity(Gravity.TOP,0,0);
                             objectToast.show();
+
+                            nameET.setText("");
+                            cityET.setText("");
+                            genderET.setText("");
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
